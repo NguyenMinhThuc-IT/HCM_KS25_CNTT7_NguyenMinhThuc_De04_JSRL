@@ -1,19 +1,9 @@
-"use strict";
-
-// 1. Dữ liệu khởi tạo ban đầu
 let products = [
   { productCode: "PRD-001", productName: "Điện Thoại Nova X1", brand: "Nova Mobile", stockQuantity: 120, warrantyMonths: 12 },
   { productCode: "PRD-002", productName: "Máy Tính Bảng Nova Tab", brand: "Nova Mobile", stockQuantity: 35, warrantyMonths: 24 },
   { productCode: "PRD-003", productName: "Tai Nghe Sky Buds", brand: "Bluesky Audio", stockQuantity: 80, warrantyMonths: 6 }
 ];
 
-// ============================================================================
-// 2. Các hàm bắt buộc theo yêu cầu đề bài
-// ============================================================================
-
-/**
- * 1. Kiểm tra mã sản phẩm (Validate vừa phải, tự nhiên)
- */
 const validateProductCode = (code) => {
   if (code === null) return "Hủy thao tác";
   if (typeof code !== "string" || code.trim() === "") {
@@ -35,9 +25,7 @@ const validateProductCode = (code) => {
   return "";
 };
 
-/**
- * 2. Tìm vị trí sản phẩm theo mã (trả về index hoặc -1)
- */
+
 const findProductIndex = (code) => {
   if (!code) return -1;
   const cleanCode = code.trim().toUpperCase();
@@ -49,9 +37,6 @@ const findProductIndex = (code) => {
   return -1;
 };
 
-/**
- * 3. Chuẩn hóa chuỗi (bỏ khoảng trắng thừa, viết hoa chữ cái đầu mỗi từ)
- */
 const normalizeText = (rawText) => {
   if (!rawText) return "";
   const cleaned = rawText.trim().replace(/\s+/g, " ");
@@ -113,10 +98,6 @@ const displayProducts = (list) => {
   console.log("==================================================");
 };
 
-
-// ============================================================================
-// 3. Các chức năng menu (CRUD)
-// ============================================================================
 
 // Case 1: Hiển thị danh sách
 const handleDisplay = () => {
